@@ -68,6 +68,12 @@ const DisclaimerWrapper = styled.div`
 `;
 
 
+const PERMIT_LENGTH = {
+  ONE_DAY: 1,
+  ONE_WEEK: 7,
+  TWO_DAYS: 2,
+}
+
 function App() {
   const now = new Date();
   const permitNumber = getPermitNumber(now);
@@ -86,7 +92,7 @@ function App() {
           <p>{formatDate(now)}</p>
 
           <p>Valid to:</p>
-          <p>{formatDate(addDays(now, 2))}</p>
+          <p>{formatDate(addDays(now, PERMIT_LENGTH.ONE_WEEK))}</p>
         </PermitDetailsListWrapper>
         <BarcodeWrapper>
 
