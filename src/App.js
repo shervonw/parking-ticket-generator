@@ -16,7 +16,9 @@ function App() {
 
   useEffect(() => {
     if (permitLength) {
-      window.print();
+      setTimeout(() => {
+        window.print();
+      }, 1000)
     }
   }, [permitLength])
 
