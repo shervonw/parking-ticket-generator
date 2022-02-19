@@ -7,7 +7,7 @@ const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   padding-top: 56px;
-  width: 400px;
+  width: 320px;
   margin: auto;
 `;
 
