@@ -34,3 +34,9 @@ for (const idx in PERMITS) {
 
 const MINUTES_IN_DAY = 1440;
 export const AVG_PERMIT_PER_MINUTE = (numberOfPermitsPurchased / numberOfDaysSinceFirstPermitPurchased) / MINUTES_IN_DAY;
+
+export const PERMIT_LENGTH = {
+  ONE_DAY: 1,
+  ONE_WEEK: 7,
+  TWO_DAYS: 2,
+}
