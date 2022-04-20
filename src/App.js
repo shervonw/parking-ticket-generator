@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { PERMIT_LENGTH } from "./constants";
 import { Permit } from "./Permit";
 
-const ButtonWrapper = styled.div`
+const InputWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   padding-top: 56px;
@@ -27,18 +27,18 @@ function App() {
   return (
    <div>
      <div className="no-print">
-       <ButtonWrapper>
+       <InputWrapper>
         <label htmlFor="plateNo">Plate:</label>
         <input id="plateNo" type="text" onChange={(e) => setPlateNo(e.target.value)} />
-        </ButtonWrapper>
+        </InputWrapper>
         <br />
-        <ButtonWrapper>
+        <InputWrapper>
           {Object.entries(PERMIT_LENGTH).map(([key, value]) => (
             <button key={key} onClick={()=> setPermitLength(value)}>
               {key}
             </button>
           ))}
-        </ButtonWrapper>
+        </InputWrapper>
       </div>
       {permitLength && (
         <Permit permitLength={permitLength} plateNo={plateNo} />
