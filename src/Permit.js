@@ -68,7 +68,7 @@ const DisclaimerWrapper = styled.div`
 `;
 
 
-export const Permit=({permitLength})=> {
+export const Permit=({permitLength, plateNo})=> {
   const now = new Date();
   const permitNumber = getPermitNumber(now);
 
@@ -109,7 +109,7 @@ export const Permit=({permitLength})=> {
           <p>T{permitNumber}</p>
 
           <p>Plate no.:</p>
-          <p>CBMN830</p>
+          <p>{plateNo}</p>
 
           <p>Issued:</p>
           <p>{formatDate(now)}</p>

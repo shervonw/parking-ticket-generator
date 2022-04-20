@@ -13,28 +13,37 @@ const ButtonWrapper = styled.div`
 
 function App() {
   const [permitLength, setPermitLength] = useState()
+  const [plateNo, setPlateNo] = useState('CBMN830')
 
   useEffect(() => {
     if (permitLength) {
       setTimeout(() => {
         window.print();
+        setPermitLength();
       }, 1000)
     }
   }, [permitLength])
 
   return (
    <div>
-     <ButtonWrapper className="no-print">
-      {Object.entries(PERMIT_LENGTH).map(([key, value]) => (
-        <button key={key} onClick={()=> setPermitLength(value)}>
-          {key}
-        </button>
-      ))}
-     </ButtonWrapper>
-    {permitLength && (
-      <Permit permitLength={permitLength} />
-    )}
-   </div>
+     <div className="no-print">
+       <ButtonWrapper>
+        <label htmlFor="plateNo">Plate:</label>
+        <input id="plateNo" type="text" onChange={(e) => setPlateNo(e.target.value)} />
+        </ButtonWrapper>
+        <br />
+        <ButtonWrapper>
+          {Object.entries(PERMIT_LENGTH).map(([key, value]) => (
+            <button key={key} onClick={()=> setPermitLength(value)}>
+              {key}
+            </button>
+          ))}
+        </ButtonWrapper>
+      </div>
+      {permitLength && (
+        <Permit permitLength={permitLength} plateNo={plateNo} />
+      )}
+    </div>
   );
 }
 
